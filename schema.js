@@ -11,7 +11,8 @@ const typeDefs = gql`
     }
 
     type Query {
-        getPhotos(albumId: String, id: [String]): [Photo],
+        Photos: [Photo]
+        getPhotos(albumId: String, id: [String]): [Photo]
         getCount: Int
     }
 `;
@@ -24,21 +25,22 @@ const resolvers = {
                 if (response.ok) {
                     let jsonResponse = await response.json();
                     if (args.albumId) {
-                        let albumId = parseInt(args.albumId, 32);
+                        let albumId = parseInt(args.albumId);
                         let getByAlbumId = jsonResponse.filter(photo => photo.albumId === albumId);
                         return getByAlbumId;
                     }
                     else if (args.id) {   
                         let idArray = args.id.map(x => {
-                            return parseInt(x, 32);
+                            return parseInt(x);
                         });
                         let filteredByIds = jsonResponse.filter(photo => {
                             return idArray.includes(photo.id);
                         });
                         return filteredByIds;
                     }
-                    
+
                     }
+
                     else {
                         return jsonResponse;
                     }
@@ -60,6 +62,12 @@ const resolvers = {
             catch(error) {
                 console.log(error);
             }
+        },
+
+        Photos: async() => {
+            let response = await fetch(photosUrl);
+            let jsonResponse = await response.json();
+            return jsonResponse;
         }
 
     }
