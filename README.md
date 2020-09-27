@@ -6,7 +6,7 @@ Test graphql server with unit tests.
 
 Initialize npm and install dependencies in your project directory: \
 ```
-npm init \
+npm init
 npm install chai chai-http mocha apollo-server node-fetch
 ```
 
