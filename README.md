@@ -5,15 +5,19 @@ Test graphql server with unit tests.
 ## Deployment
 
 Initialize npm and install dependencies in your project directory: \
-`npm init` \
-`npm install chai chai-http mocha apollo-server node-fetch `
+```
+npm init \
+npm install chai chai-http mocha apollo-server node-fetch
+```
 
 ## Running tests
 Initialize tests in  package.json: \
-`"scripts": {
+```
+"scripts": {
     "test": "mocha tests/test.js"
-  },`
-  
+  }
+```
+
 Run tests: \
 `npm test`
 
@@ -24,8 +28,8 @@ Run tests: \
     `id: [string]` - get photos by photo ids. \
 
 ## Query example
-
-`query {
+```
+query {
   getPhotos(albumId: "2") {
     id,
     albumId,
@@ -33,22 +37,25 @@ Run tests: \
     url,
     thumbnail
   }
-}`
+}
+```
 
 ## Query specific properties
-
-`query {
+```
+query {
   getPhotos(albumId: "2") {
     id,
     url
-  }`
+  }
+ ```
 
 ## Getting all photos
-
-`Photos {
+```
+Photos {
   id,
   albumId,
   title,
   url,
   thumbnailUrl
-}`
+}
+```
