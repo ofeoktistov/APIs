@@ -5,11 +5,7 @@ const { server } = require('../main');
 const testUrl = 'http://localhost:4000/graphql';
 const expect = chai.expect;
 chai.use(chaiHttp);
-/*
-server.listen().then(({ url }) => {
- console.log(`Test server has started on ${url}`);
-});
-*/
+
 describe('Starting test server', () => {
 before(() => {
     try {
