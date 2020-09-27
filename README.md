@@ -22,10 +22,10 @@ Run tests: \
 `npm test`
 
 ## Query types
-- Photos - get array of photo objects. \
-- getPhotos - query photos array with filters. Filters available: \
-  * albumId: string - get photos by albumId. \
-  * id: [string] - get photos by photo ids. 
+- `Photos` - get array of photo objects. \
+- `getPhotos` - query photos array with filters. Filters available: \
+  * `albumId: string` - get photos by albumId. \
+  * `id: [string]` - get photos by photo ids. 
 
 ## Query example
 ```
